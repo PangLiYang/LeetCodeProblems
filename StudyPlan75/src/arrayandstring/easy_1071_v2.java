@@ -1,4 +1,6 @@
-public class easy_1071_v2_GreatestCommonDivisorOfStrings {
+package arrayandstring;
+
+public class easy_1071_v2 {
 
     public String gcdOfStrings(String str1, String str2) {
         String str = "";
@@ -21,10 +23,5 @@ public class easy_1071_v2_GreatestCommonDivisorOfStrings {
 
         String base = str1.substring(0, k);
         return str1.replace(base, "").isEmpty() && str2.replace(base, "").isEmpty();
-    }
-
-    public static void main(String[] args) {
-        easy_1071_v2_GreatestCommonDivisorOfStrings obj = new easy_1071_v2_GreatestCommonDivisorOfStrings();
-        System.out.println(obj.gcdOfStrings("ABBC", "ABC"));
     }
 }

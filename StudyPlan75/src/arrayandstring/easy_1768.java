@@ -1,4 +1,6 @@
-public class easy_1768_MergeStringsAlternately {
+package arrayandstring;
+
+public class easy_1768 {
 
     public String mergeAlternately(String word1, String word2) {
         StringBuilder sb = new StringBuilder();
@@ -17,12 +19,5 @@ public class easy_1768_MergeStringsAlternately {
             }
         }
         return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        String str1 = "apple";
-        String str2 = "banana";
-        easy_1768_MergeStringsAlternately task = new easy_1768_MergeStringsAlternately();
-        System.out.println(task.mergeAlternately(str1, str2));
     }
 }

@@ -1,4 +1,6 @@
-public class easy_1071_GreatestCommonDivisorOfStrings {
+package arrayandstring;
+
+public class easy_1071 {
 
     public String gcdOfStrings(String str1, String str2) {
         String str = "";
@@ -30,10 +32,5 @@ public class easy_1071_GreatestCommonDivisorOfStrings {
         }
 
         return false;
-    }
-
-    public static void main(String[] args) {
-        easy_1071_GreatestCommonDivisorOfStrings obj = new easy_1071_GreatestCommonDivisorOfStrings();
-        System.out.println(obj.gcdOfStrings("LEET", "CODE"));
     }
 }
