@@ -1,6 +1,6 @@
-package arrayandstring;
+package array_and_string;
 
-public class easy_1071_v2 {
+public class Easy_1071_v2 {
 
     public String gcdOfStrings(String str1, String str2) {
         String str = "";

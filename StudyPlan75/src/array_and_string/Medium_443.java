@@ -1,6 +1,6 @@
-package arrayandstring;
+package array_and_string;
 
-public class medium_443 {
+public class Medium_443 {
     public int compress(char[] chars) {
         StringBuilder sb = new StringBuilder();
         int count;

@@ -1,8 +1,8 @@
-package twopointer;
+package two_pointer;
 
 import java.util.*;
 
-public class medium_1679_v2 {
+public class Medium_1679_v2 {
     public int maxOperations(int[] nums, int k) {
         Map<Integer, Integer> matchMap = new HashMap<>();
         int count = 0;

@@ -1,9 +1,9 @@
-package arrayandstring;
+package array_and_string;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class easy_1431 {
+public class Easy_1431 {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
         List<Boolean> list = new ArrayList<>();
         int max = 0;

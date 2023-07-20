@@ -1,6 +1,6 @@
-package twopointer;
+package two_pointer;
 
-public class easy_392 {
+public class Easy_392 {
     public boolean isSubsequence(String s, String t) {
         StringBuilder sb = new StringBuilder();
         int startPos = 0;

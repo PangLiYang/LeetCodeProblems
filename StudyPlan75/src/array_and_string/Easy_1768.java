@@ -1,6 +1,6 @@
-package arrayandstring;
+package array_and_string;
 
-public class easy_1768 {
+public class Easy_1768 {
 
     public String mergeAlternately(String word1, String word2) {
         StringBuilder sb = new StringBuilder();

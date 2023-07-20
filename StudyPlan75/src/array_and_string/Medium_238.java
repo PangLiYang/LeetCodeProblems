@@ -1,6 +1,6 @@
-package arrayandstring;
+package array_and_string;
 
-public class medium_238 {
+public class Medium_238 {
     public int[] productExceptSelf(int[] nums) {
         int[] targetArr = new int[nums.length];
         int lp = 1;

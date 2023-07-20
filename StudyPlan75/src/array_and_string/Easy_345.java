@@ -1,11 +1,11 @@
-package arrayandstring;
+package array_and_string;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class easy_345 {
+public class Easy_345 {
     public String reverseVowels(String s) {
         Set<Character> set = new TreeSet<>();
         List<Character> list = new ArrayList<>();
@@ -38,7 +38,7 @@ public class easy_345 {
     }
 
     public static void main(String[] args) {
-        easy_345 test = new easy_345();
+        Easy_345 test = new Easy_345();
         System.out.println(test.reverseVowels("apple"));
     }
 }

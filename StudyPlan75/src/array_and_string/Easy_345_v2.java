@@ -1,6 +1,6 @@
-package arrayandstring;
+package array_and_string;
 
-public class easy_345_v2 {
+public class Easy_345_v2 {
     public String reverseVowels(String s) {
         StringBuilder sb = new StringBuilder(s);
         int leftPointer = 0;

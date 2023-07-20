@@ -1,8 +1,8 @@
-package twopointer;
+package two_pointer;
 
 import java.util.Arrays;
 
-public class medium_1679 {
+public class Medium_1679 {
     public int maxOperations(int[] nums, int k) {
         int lp = 0;
         int rp = nums.length - 1;

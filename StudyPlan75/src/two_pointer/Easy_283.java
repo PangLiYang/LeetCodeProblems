@@ -1,6 +1,6 @@
-package twopointer;
+package two_pointer;
 
-public class easy_283 {
+public class Easy_283 {
     public void moveZeroes(int[] nums) {
         int swapIndex = 0;
 

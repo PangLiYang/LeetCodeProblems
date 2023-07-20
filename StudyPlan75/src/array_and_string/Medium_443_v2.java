@@ -1,6 +1,6 @@
-package arrayandstring;
+package array_and_string;
 
-public class medium_443_v2 {
+public class Medium_443_v2 {
     public int compress(char[] chars) {
         int index = 0;
         int count;

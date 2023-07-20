@@ -1,6 +1,6 @@
-package arrayandstring;
+package array_and_string;
 
-public class medium_151 {
+public class Medium_151 {
     public String reverseWords(String s) {
         StringBuilder sb = new StringBuilder();
 

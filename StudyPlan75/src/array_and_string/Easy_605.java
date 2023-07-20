@@ -1,6 +1,6 @@
-package arrayandstring;
+package array_and_string;
 
-public class easy_605 {
+public class Easy_605 {
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
 
         if (n == 0) {
@@ -57,7 +57,7 @@ public class easy_605 {
     }
 
     public static void main(String[] args) {
-        easy_605 test = new easy_605();
+        Easy_605 test = new Easy_605();
         int[] arr = new int[]{0,0,0,0,0,1,0,0};
         int num = 0;
         System.out.println(test.canPlaceFlowers(arr, num));

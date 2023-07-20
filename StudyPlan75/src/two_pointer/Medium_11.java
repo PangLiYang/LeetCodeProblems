@@ -1,6 +1,6 @@
-package twopointer;
+package two_pointer;
 
-public class medium_11 {
+public class Medium_11 {
     public int maxArea(int[] heights) {
         int left = 0;
         int right = heights.length - 1;

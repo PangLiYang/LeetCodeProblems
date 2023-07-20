@@ -1,9 +1,9 @@
-package arrayandstring;
+package array_and_string;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class medium_334 {
+public class Medium_334 {
     public boolean increasingTriplet(int[] nums) {
         int curr;
         int pivot = 0;
@@ -61,7 +61,7 @@ public class medium_334 {
     }
 
     public static void main(String[] args) {
-        medium_334 test = new medium_334();
+        Medium_334 test = new Medium_334();
         int[] arr = new int[]{0,4,2,1,0,-1,-3};
 
         System.out.println(test.increasingTriplet(arr));
