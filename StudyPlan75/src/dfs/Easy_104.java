@@ -1,4 +1,4 @@
-package DFS;
+package dfs;
 
 public class Easy_104 {
 

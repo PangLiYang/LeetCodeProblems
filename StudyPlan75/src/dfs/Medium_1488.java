@@ -1,4 +1,4 @@
-package DFS;
+package dfs;
 
 public class Medium_1488 {
     private class TreeNode {
