@@ -1,4 +1,4 @@
-package dfs;
+package bt_dfs;
 
 public class Medium_1488_2 {
     private int count = 0;
