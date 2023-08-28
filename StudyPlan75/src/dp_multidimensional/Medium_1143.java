@@ -17,4 +17,11 @@ public class Medium_1143 {
 
         return dp[m][n];
     }
+
+    public static void main(String[] args) {
+        Medium_1143 tt = new Medium_1143();
+        System.out.println(tt.longestCommonSubsequence("horse", "ros"));
+        System.out.println("intention".length());
+        System.out.println("execution".length());
+    }
 }
