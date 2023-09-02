@@ -1,26 +1,40 @@
 package array_and_string;
 
 public class Medium_334_v2 {
-    public boolean increasingTriplet(int[] nums) {
-        int small = Integer.MAX_VALUE;
-        int big = Integer.MAX_VALUE;
+    public int compress(char[] chars) {
+        StringBuilder sb = new StringBuilder();
+        char target = chars[0];
+        int count = 1;
 
-        for (int n : nums) {
-            if (n <= small) {
-                small = n;
-            } else if (n <= big) {
-                big = n;
+        for (int i = 1; i < chars.length; i += 1) {
+            char c = chars[i];
+
+            if (c != target) {
+                sb.append(target);
+                if (count != 1) {
+                    sb.append(String.valueOf(count));
+                }
+                target = c;
+                count = 1;
             } else {
-                return true;
+                count += 1;
+            }
+
+            if (i == chars.length - 1) {
+                sb.append(target);
+                if (count != 1) {
+                    sb.append(count);
+                }
             }
         }
-        return false;
+
+        return sb.length();
     }
 
     public static void main(String[] args) {
         Medium_334_v2 test = new Medium_334_v2();
-        int[] arr = new int[]{1, 2, 0, 1, 1, 3, 1, 1};
+        char[] arr = new char[]{'a', 'a', 'b', 'b', 'c', 'c', 'c'};
 
-        System.out.println(test.increasingTriplet(arr));
+        System.out.println(test.compress(arr));
     }
 }
