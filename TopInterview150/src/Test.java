@@ -1,26 +1,39 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class Test {
-    public int maxArea(int[] heights) {
-        int lp = 0;
-        int rp = heights.length - 1;
+    public int equalPairs(int[][] grid) {
+        int n = grid[0].length;
+        int ans = 0;
+        Map<String, Integer> map = new HashMap<>();
 
-        int maxHeight = 0;
-        int vol = 0;
-
-        while (lp < rp) {
-            if (heights[lp] > maxHeight && heights[rp] > maxHeight) {
-                maxHeight = Math.min(heights[lp], heights[rp]);
-                vol = Math.max(vol, maxHeight * (rp - lp));
+        for (int i = 0; i < n; i += 1) {
+            StringBuilder sb = new StringBuilder();
+            for (int j: grid[i]) {
+                sb.append(j);
+                sb.append(' ');
             }
-
-            if (heights[lp] == maxHeight) {
-                lp += 1;
-            } else {
-                rp += 1;
-            }
+            String s = sb.toString();
+            System.out.println(s);
+            map.put(s, map.getOrDefault(s, 0) + 1);
         }
 
-        return vol;
+        for (int i = 0; i < n; i += 1) {
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < n; j += 1) {
+                sb.append(grid[j][i]);
+                sb.append(' ');
+            }
+            String s = sb.toString();
+            System.out.println(s);
+            ans += map.getOrDefault(s, 0);
+        }
+
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        Test tt = new Test();
+        int[][] input = {{11,1}, {1,11}};
+        System.out.println(tt.equalPairs(input));
     }
 }

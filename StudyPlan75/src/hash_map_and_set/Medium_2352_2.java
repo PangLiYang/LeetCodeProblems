@@ -1,32 +1,34 @@
 package hash_map_and_set;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Medium_2352_2 {
     public int equalPairs(int[][] grid) {
-        Map<String, Integer> compMap = new HashMap<>();
-        int count = 0;
+        int n = grid[0].length;
+        int ans = 0;
+        Map<String, Integer> map = new HashMap<>();
 
-        for (int[] slice : grid) {
-            String str = Arrays.toString(slice);
-            compMap.put(str, compMap.getOrDefault(str, 0) + 1);
+        for (int i = 0; i < n; i += 1) {
+            StringBuilder sb = new StringBuilder();
+            for (int j: grid[i]) {
+                sb.append(j);
+                sb.append(' ');
+            }
+            String s = sb.toString();
+            map.put(s, map.getOrDefault(s, 0) + 1);
         }
 
-        for (int i = 0; i < grid.length; i += 1) {
-            int[] target = new int[grid.length];
-            for (int j = 0; j < grid.length; j += 1) {
-                target[j] = grid[j][i];
+        for (int i = 0; i < n; i += 1) {
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < n; j += 1) {
+                sb.append(grid[j][i]);
+                sb.append(' ');
             }
-
-            String targetStr = Arrays.toString(target);
-
-            if (compMap.containsKey(targetStr)) {
-                count += compMap.get(targetStr);
-            }
+            String s = sb.toString();
+            ans += map.getOrDefault(s, 0);
         }
 
-        return count;
+        return ans;
     }
 }
