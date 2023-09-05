@@ -1,39 +1,50 @@
 import java.util.*;
 
 public class Test {
-    public int equalPairs(int[][] grid) {
-        int n = grid[0].length;
-        int ans = 0;
-        Map<String, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < n; i += 1) {
-            StringBuilder sb = new StringBuilder();
-            for (int j: grid[i]) {
-                sb.append(j);
-                sb.append(' ');
-            }
-            String s = sb.toString();
-            System.out.println(s);
-            map.put(s, map.getOrDefault(s, 0) + 1);
+    public int[] mergeSort (int[] arr) {
+        int n = arr.length;
+
+        if (n == 1) {
+            return arr;
         }
 
-        for (int i = 0; i < n; i += 1) {
-            StringBuilder sb = new StringBuilder();
-            for (int j = 0; j < n; j += 1) {
-                sb.append(grid[j][i]);
-                sb.append(' ');
+        int[] arr1 = mergeSort(Arrays.copyOfRange(arr, 0, n / 2));
+        int[] arr2 = mergeSort(Arrays.copyOfRange(arr, n / 2, n));
+        int[] ans = new int[n];
+        int i = 0;
+        int j = 0;
+        int idx = 0;
+
+        while (i < n / 2 && j < n - n / 2){
+            if (arr1[i] <= arr2[j]) {
+                ans[idx] = arr1[i];
+                i += 1;
+            } else {
+                ans[idx] = arr2[j];
+                j += 1;
             }
-            String s = sb.toString();
-            System.out.println(s);
-            ans += map.getOrDefault(s, 0);
+            idx += 1;
+        }
+
+        while(i < n / 2) {
+            ans[idx] = arr1[i];
+            i += 1;
+            idx += 1;
+        }
+
+        while(j < n - n / 2) {
+            ans[idx] = arr2[j];
+            j += 1;
+            idx += 1;
         }
 
         return ans;
     }
 
     public static void main(String[] args) {
+        int[] input = {-2, -1, 1, 2, 5, 9, 1, 2, 5, -5};
         Test tt = new Test();
-        int[][] input = {{11,1}, {1,11}};
-        System.out.println(tt.equalPairs(input));
+        System.out.println(Arrays.toString(tt.mergeSort(input)));
     }
 }
