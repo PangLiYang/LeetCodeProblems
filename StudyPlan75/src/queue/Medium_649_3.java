@@ -1,7 +1,6 @@
-import java.util.*;
+package queue;
 
-public class Test {
-
+public class Medium_649_3 {
     public String predictPartyVictory(String senate) {
         StringBuilder sb = new StringBuilder();
         int rIdx = 0;
@@ -13,25 +12,29 @@ public class Test {
                 if (rIdx < 0) {
                     rIdx += 1;
                 } else {
-                    if (i == senate.length() - 1) {
-                        sb.insert(0, c);
-                    } else {
-                        sb.append(c);
-                        dIdx -= 1;
-                    }
+                    sb.append(c);
+                    dIdx -= 1;
                 }
             } else {
                 if (dIdx < 0) {
                     dIdx += 1;
                 } else {
-                    if (i == senate.length() - 1) {
-                        sb.insert(0, c);
-                    } else {
-                        sb.append(c);
-                        rIdx -= 1;
-                    }
+                    sb.append(c);
+                    rIdx -= 1;
                 }
             }
+        }
+
+        while (rIdx < 0) {
+            sb.insert(0, 'D');
+            sb.deleteCharAt(sb.length() - 1);
+            rIdx += 1;
+        }
+
+        while (dIdx < 0) {
+            sb.insert(0, 'R');
+            sb.deleteCharAt(sb.length() - 1);
+            dIdx += 1;
         }
 
         String ans = sb.toString();
@@ -45,11 +48,5 @@ public class Test {
         }
 
         return predictPartyVictory(ans);
-    }
-
-    public static void main(String[] args) {
-        String input = "RRDDD";
-        Test tt = new Test();
-        System.out.println(tt.predictPartyVictory(input));
     }
 }
