@@ -1,7 +1,6 @@
-import java.util.*;
+package matrix;
 
-public class Test {
-
+public class Medium_289 {
     public void gameOfLife(int[][] board) {
         int m = board.length;
         int n = board[0].length;
@@ -37,5 +36,4 @@ public class Test {
         lives -= board[i][j] & 1;
         return lives;
     }
-
 }
