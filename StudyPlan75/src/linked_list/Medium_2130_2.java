@@ -1,9 +1,5 @@
 package linked_list;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
-
 public class Medium_2130_2 {
     ListNode head = new ListNode(1, new ListNode(100, null));
 
@@ -18,28 +14,25 @@ public class Medium_2130_2 {
     }
 
     public int pairSum(ListNode head) {
-        ListNode slow = head;
+        int max = Integer.MIN_VALUE;
         ListNode fast = head;
+        ListNode slow = head;
+        ListNode prev = null;
 
-        while (fast != null && fast.next != null) {
+        while (fast!= null && fast.next!= null) {
             fast = fast.next.next;
-            slow = slow.next;
-        }
-
-        ListNode nextNode, prev = null;
-        while (slow != null) {
-            nextNode = slow.next;
+            ListNode next = slow.next;
             slow.next = prev;
             prev = slow;
-            slow = nextNode;
+            slow = next;
         }
 
-        ListNode start = head;
-        int max = 0;
-        while (prev != null) {
-            max = Math.max(max, start.val + prev.val);
-            start = start.next;
-            prev = prev.next;
+        head = prev;
+
+        while (slow != null) {
+            max = Math.max(max, slow.val + head.val);
+            slow = slow.next;
+            head = head.next;
         }
 
         return max;
