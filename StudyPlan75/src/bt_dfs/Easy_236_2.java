@@ -11,16 +11,17 @@ public class Easy_236_2 {
         if (root == null || root.equals(p) || root.equals(q)) {
             return root;
         }
-        TreeNode left = lowestCommonAncestor(root.left, p , q);
-        TreeNode right = lowestCommonAncestor(root.right, p , q);
 
-        if (left.equals(null)) {
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+
+        if (right == null) {
+            return left;
+        } else if (left == null) {
             return right;
         } else {
-            if (right.equals(null)) {
-                return left;
-            }
             return root;
         }
+
     }
 }
