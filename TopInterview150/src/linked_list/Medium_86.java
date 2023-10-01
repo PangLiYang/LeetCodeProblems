@@ -1,6 +1,6 @@
 package linked_list;
 
-public class Medieum_86 {
+public class Medium_86 {
 
     private class ListNode {
         int val;
