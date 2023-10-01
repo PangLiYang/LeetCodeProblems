@@ -6,14 +6,13 @@ public class Easy_21 {
         int val;
         ListNode next;
 
+        public ListNode() {
+        }
+
         public ListNode(int val, ListNode next) {
             this.val = val;
             this.next = next;
         }
-
-        public ListNode() {
-        }
-
     }
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
@@ -41,5 +40,4 @@ public class Easy_21 {
 
         return out.next;
     }
-
 }
