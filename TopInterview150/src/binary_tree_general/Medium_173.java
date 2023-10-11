@@ -1,6 +1,8 @@
 package binary_tree_general;
 
-public class Medium_129 {
+import java.util.LinkedList;
+
+public class Medium_173 {
 
     class TreeNode {
         int val;
@@ -20,34 +22,32 @@ public class Medium_129 {
         }
     }
 
-    private int rlSum = 0;
+    LinkedList<TreeNode> nodeList;
 
-    public int sumNumbers(TreeNode root) {
-        dfs(root, 0);
-
-        return rlSum;
-
+    public Medium_173(TreeNode root) {
+        nodeList = new LinkedList<>();
+        createList(root, nodeList);
     }
 
-    private void dfs(TreeNode root, int sum) {
-        sum = 10 * sum + root.val;
+    public int next() {
+        return nodeList.removeFirst().val;
+    }
 
-        if (root.left == null && root.right == null) {
-            rlSum += sum;
+    public boolean hasNext() {
+        return !nodeList.isEmpty();
+    }
+
+    private void createList(TreeNode root, LinkedList<TreeNode> nodeList) {
+        dfs(root, nodeList);
+    }
+
+    private void dfs(TreeNode root, LinkedList<TreeNode> nodeList) {
+        if (root == null) {
             return;
         }
 
-        if (root.right == null) {
-            dfs(root.left, sum);
-            return;
-        }
-
-        if (root.left == null) {
-            dfs(root.right, sum);
-            return;
-        }
-
-        dfs(root.left, sum);
-        dfs(root.right, sum);
+        dfs(root.left, nodeList);
+        nodeList.addLast(root);
+        dfs(root.right, nodeList);
     }
 }

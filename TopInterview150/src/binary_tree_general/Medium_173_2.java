@@ -1,8 +1,8 @@
 package binary_tree_general;
 
-import java.util.LinkedList;
+import java.util.Stack;
 
-public class Medium_173 {
+public class Medium_173_2 {
 
     class TreeNode {
         int val;
@@ -22,32 +22,28 @@ public class Medium_173 {
         }
     }
 
-    LinkedList<TreeNode> nodeList;
+    Stack<TreeNode> nodeStack;
 
-    public Medium_173(TreeNode root) {
-        nodeList = new LinkedList<>();
-        createList(root, nodeList);
+    public Medium_173_2(TreeNode root) {
+        nodeStack = new Stack<>();
+        addLeft(root);
     }
 
     public int next() {
-        return nodeList.removeFirst().val;
+        TreeNode curr = nodeStack.pop();
+        addLeft(curr.right);
+        return curr.val;
     }
 
     public boolean hasNext() {
-        return !nodeList.isEmpty();
+        return !nodeStack.isEmpty();
     }
 
-    private void createList(TreeNode root, LinkedList<TreeNode> nodeList) {
-        dfs(root, nodeList);
-    }
+    private void addLeft(TreeNode node) {
 
-    private void dfs(TreeNode root, LinkedList<TreeNode> nodeList) {
-        if (root == null) {
-            return;
+        while (node != null) {
+            nodeStack.push(node);
+            node = node.left;
         }
-
-        dfs(root.left, nodeList);
-        nodeList.addLast(root);
-        dfs(root.right, nodeList);
     }
 }

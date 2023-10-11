@@ -1,6 +1,6 @@
 package binary_tree_general;
 
-public class Medium_114 {
+public class Medium_129 {
 
     class TreeNode {
         int val;
@@ -20,24 +20,34 @@ public class Medium_114 {
         }
     }
 
-    public void flatten(TreeNode root) {
-        if (root == null) {
+    private int rlSum = 0;
+
+    public int sumNumbers(TreeNode root) {
+        dfs(root, 0);
+
+        return rlSum;
+
+    }
+
+    private void dfs(TreeNode root, int sum) {
+        sum = 10 * sum + root.val;
+
+        if (root.left == null && root.right == null) {
+            rlSum += sum;
             return;
         }
 
-        flatten(root.left);
-        flatten(root.right);
-
-        TreeNode leftSide = root.left;
-        TreeNode rightSide = root.right;
-
-        root.left = null;
-        root.right = leftSide;
-
-        TreeNode curr = root;
-        while (curr.right != null) {
-            curr = curr.right;
+        if (root.right == null) {
+            dfs(root.left, sum);
+            return;
         }
-        curr.right = rightSide;
+
+        if (root.left == null) {
+            dfs(root.right, sum);
+            return;
+        }
+
+        dfs(root.left, sum);
+        dfs(root.right, sum);
     }
 }

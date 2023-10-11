@@ -1,6 +1,6 @@
 package binary_tree_general;
 
-public class Medium_114 {
+public class Easy_112 {
 
     class TreeNode {
         int val;
@@ -20,24 +20,35 @@ public class Medium_114 {
         }
     }
 
-    public void flatten(TreeNode root) {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+
         if (root == null) {
-            return;
+            return false;
         }
 
-        flatten(root.left);
-        flatten(root.right);
+        return dfs(root, targetSum, 0);
 
-        TreeNode leftSide = root.left;
-        TreeNode rightSide = root.right;
+    }
 
-        root.left = null;
-        root.right = leftSide;
+    private boolean dfs(TreeNode root, int target, int sum) {
 
-        TreeNode curr = root;
-        while (curr.right != null) {
-            curr = curr.right;
+        sum += root.val;
+
+        if (root.left == null && root.right == null) {
+            if (sum == target) {
+                return true;
+            }
+            return false;
         }
-        curr.right = rightSide;
+
+        if (root.right == null) {
+            return dfs(root.left, target, sum);
+        }
+
+        if (root.left == null) {
+            return dfs(root.right, target, sum);
+        }
+
+        return dfs(root.left, target, sum) || dfs(root.right, target, sum);
     }
 }
