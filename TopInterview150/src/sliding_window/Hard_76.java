@@ -1,7 +1,9 @@
-import java.util.*;
+package sliding_window;
 
-public class Test {
+import java.util.HashMap;
+import java.util.Map;
 
+public class Hard_76 {
     public String minWindow(String s, String t) {
 
         if (s.length() < t.length()) {
@@ -54,12 +56,5 @@ public class Test {
         }
 
         return "";
-    }
-
-    public static void main(String[] args) {
-        Test tt = new Test();
-        String s = "ADOBECODEBANC";
-        String t = "ABC";
-        System.out.println(tt.minWindow(s, t));
     }
 }
