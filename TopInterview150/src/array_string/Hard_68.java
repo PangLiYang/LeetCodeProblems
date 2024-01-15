@@ -1,6 +1,10 @@
-import java.util.*;
+package array_string;
 
-public class Test {
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Hard_68 {
 
     public List<String> fullJustify(String[] words, int maxWidth) {
 
@@ -57,13 +61,5 @@ public class Test {
         }
 
         return output;
-    }
-
-
-    public static void main(String[] args) {
-        Test tt = new Test();
-        String[] words = {"This", "is", "an", "example", "of", "text", "justification."};
-        int maxWidth = 16;
-        System.out.println(tt.fullJustify(words, maxWidth));
     }
 }
