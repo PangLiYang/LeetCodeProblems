@@ -1,6 +1,6 @@
-import java.util.*;
+package stack;
 
-public class Test {
+public class Hard_224 {
 
     public int calculate(String s) {
 
@@ -56,12 +56,5 @@ public class Test {
 
         return sum;
 
-    }
-
-
-    public static void main(String[] args) {
-        Test tt = new Test();
-        String s = "(1+(4+5+2)-3)+(6+8)";
-        System.out.println(tt.calculate(s));
     }
 }
