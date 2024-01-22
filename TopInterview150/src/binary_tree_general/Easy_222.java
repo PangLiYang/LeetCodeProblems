@@ -1,8 +1,6 @@
 package binary_tree_general;
 
-import java.util.LinkedList;
-
-public class Medium_222 {
+public class Easy_222 {
 
     class TreeNode {
         int val;
