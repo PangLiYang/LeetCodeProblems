@@ -2,7 +2,7 @@ package trie;
 
 public class Medium_211 {
 
-    private Node root;
+    private final Node root;
 
     public Medium_211() {
 
@@ -66,7 +66,7 @@ public class Medium_211 {
         return curr.isEnd;
     }
 
-    private class Node {
+    private static class Node {
         public boolean isEnd;
         public Node[] children;
 
