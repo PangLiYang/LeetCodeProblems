@@ -2,23 +2,65 @@ import java.util.*;
 
 public class Test {
 
-    public static void main(String[] args) {
+    public int leastInterval(char[] tasks, int n) {
 
-        Set<List<Integer>> set = new HashSet<>();
+        int[] map = new int[26];
 
-        List<Integer> l1 = new LinkedList<>();
-        l1.add(1);
-        l1.add(2);
-
-        List<Integer> l2 = new LinkedList<>();
-        l2.add(3);
-        l2.add(2);
-
-        set.add(l1);
-
-        if(set.contains(l2)) {
-            System.out.println("true!");
+        for (char c : tasks) {
+            map[c - 'A'] += 1;
         }
+
+        Comparator<Integer> comparator = new NodeComparator();
+        PriorityQueue<Integer> pq = new PriorityQueue<>(comparator);
+
+        for (int i : map) {
+            if (i > 0) {
+                pq.add(i);
+            }
+        }
+
+        int steps = 0;
+
+        while (!pq.isEmpty()) {
+            List<Integer> old = new LinkedList<>();
+            boolean notFind = false;
+
+            for (int i = 0; i <= n; i += 1) {
+
+                if (!pq.isEmpty()) {
+                    int curr = pq.poll();
+                    curr -= 1;
+
+                    if (curr > 0) {
+                        old.add(curr);
+                    }
+                }
+
+                steps += 1;
+
+                if (pq.isEmpty() && old.isEmpty()) {
+                    return steps;
+                }
+            }
+
+            for (int it : old) {
+                pq.add(it);
+            }
+        }
+
+        return steps;
+    }
+
+    private static class NodeComparator implements Comparator<Integer> {
+        @Override
+        public int compare(Integer n1, Integer n2) {
+            return n2 - n1;
+        }
+    }
+
+
+
+    public static void main(String[] args) {
 
     }
 }
