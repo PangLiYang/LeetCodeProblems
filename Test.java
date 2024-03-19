@@ -3,21 +3,22 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) {
-//        int[] T = new int[4];
-//        T[0] = 4;
-//        int n = 1;
-//        int idx = 1;
-//        while (idx < 4) {
-//            n *= 2;
-//            T[idx] = (int) ((Math.pow(2, n - 1)) * T[idx - 1] + Math.pow(2, (2 * n - 1)));
-//            idx += 1;
-//        }
-//
-//        System.out.println(Arrays.toString(T));
-//
-//        System.out.println(Math.pow(2, 2*8));
-        String apl = "apple";
-        apl = "banana";
-        System.out.println(apl);
+
+        Set<List<Integer>> set = new HashSet<>();
+
+        List<Integer> l1 = new LinkedList<>();
+        l1.add(1);
+        l1.add(2);
+
+        List<Integer> l2 = new LinkedList<>();
+        l2.add(3);
+        l2.add(2);
+
+        set.add(l1);
+
+        if(set.contains(l2)) {
+            System.out.println("true!");
+        }
+
     }
 }
