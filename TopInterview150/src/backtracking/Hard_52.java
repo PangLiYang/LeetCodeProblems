@@ -1,6 +1,8 @@
-import java.util.*;
+package backtracking;
 
-public class Test {
+import java.util.Arrays;
+
+public class Hard_52 {
 
     public int totalNQueens(int n) {
 
@@ -54,14 +56,5 @@ public class Test {
         }
 
         return true;
-    }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        int o = tt.totalNQueens(4);
-
-        System.out.println(o);
     }
 }
