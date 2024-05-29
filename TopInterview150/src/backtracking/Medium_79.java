@@ -1,6 +1,6 @@
-import java.util.*;
+package backtracking;
 
-public class Test {
+public class Medium_79 {
 
     public boolean exist(char[][] board, String word) {
 
@@ -49,20 +49,5 @@ public class Test {
         }
 
         return cond;
-    }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-        char[][] board = {
-                {'A', 'B'},
-        };
-
-        String word = "BA";
-
-        boolean o = tt.exist(board, word);
-
-        System.out.println(o);
-
     }
 }
