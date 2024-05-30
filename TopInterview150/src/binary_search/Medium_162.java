@@ -1,6 +1,6 @@
-import java.util.*;
+package binary_search;
 
-public class Test {
+public class Medium_162 {
 
     public int findPeakElement(int[] nums) {
 
@@ -37,17 +37,5 @@ public class Test {
         }
 
         return -1;
-    }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        int[] nums = {1,2,1,3,5,6,4};
-
-        int o = tt.findPeakElement(nums);
-
-        System.out.println(o);
-
     }
 }
