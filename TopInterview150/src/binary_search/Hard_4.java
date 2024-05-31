@@ -1,6 +1,6 @@
-import java.util.*;
+package binary_search;
 
-public class Test {
+public class Hard_4 {
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
@@ -54,17 +54,5 @@ public class Test {
         }
 
         return -1;
-    }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        int[] nums1 = {2};
-        int[] nums2 = {};
-
-        double o = tt.findMedianSortedArrays(nums1, nums2);
-
-        System.out.println(o);
     }
 }
