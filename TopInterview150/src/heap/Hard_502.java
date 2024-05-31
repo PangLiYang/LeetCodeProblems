@@ -1,6 +1,9 @@
-import java.util.*;
+package heap;
 
-public class Test {
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
+public class Hard_502 {
 
     public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
 
@@ -39,20 +42,5 @@ public class Test {
         }
 
         return w;
-    }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        int k = 1;
-        int w = 2;
-
-        int[] profit = {1,2,3};
-        int[] capital = {0,1,1};
-
-        int o = tt.findMaximizedCapital(k, w, profit, capital);
-
-        System.out.println(o);
     }
 }
