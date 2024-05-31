@@ -19,7 +19,6 @@ public class Hard_502 {
         Arrays.sort(proj, (a, b) -> Integer.compare(a[0], b[0]));
         int idx = 0;
 
-
         while (k > 0) {
 
             for (int i = idx; i < n; i += 1) {
