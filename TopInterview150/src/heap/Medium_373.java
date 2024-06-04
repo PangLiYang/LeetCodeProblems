@@ -1,6 +1,10 @@
-import java.util.*;
+package heap;
 
-public class Test {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+
+public class Medium_373 {
 
     public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
 
@@ -30,20 +34,5 @@ public class Test {
         }
 
         return ret;
-    }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        int[] n1 = {-10,-4,0,0,6};
-        int[] n2 = {3,5,6,7,8,100};
-        int k = 10;
-
-        List<List<Integer>> o = tt.kSmallestPairs(n1, n2, k);
-
-        for (List<Integer> l : o) {
-            System.out.println(l);
-        }
     }
 }
