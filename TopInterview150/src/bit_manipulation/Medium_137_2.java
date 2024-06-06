@@ -1,7 +1,6 @@
-import java.util.*;
+package bit_manipulation;
 
-public class Test {
-
+public class Medium_137_2 {
     public int singleNumber(int[] nums) {
 
         int one = 0;
@@ -13,16 +12,5 @@ public class Test {
         }
 
         return one;
-    }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        int[] n1 = {0,1,0,1,0,1,99};
-
-        int o = tt.singleNumber(n1);
-
-        System.out.println(o);
     }
 }
