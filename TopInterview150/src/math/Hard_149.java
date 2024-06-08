@@ -1,6 +1,10 @@
-import java.util.*;
+package math;
 
-public class Test {
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Hard_149 {
 
     public int maxPoints(int[][] points) {
 
@@ -28,15 +32,4 @@ public class Test {
 
         return ret + 1;
     }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        int[][] ps = {{0,0},{94911151,94911150},{94911152,94911151}};
-
-        int o = tt.maxPoints(ps);
-
-        System.out.println(o);
-     }
 }
