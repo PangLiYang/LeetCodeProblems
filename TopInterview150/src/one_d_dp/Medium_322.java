@@ -1,6 +1,8 @@
-import java.util.*;
+package one_d_dp;
 
-public class Test {
+import java.util.Arrays;
+
+public class Medium_322 {
 
     public int coinChange(int[] coins, int amount) {
 
@@ -21,17 +23,4 @@ public class Test {
 
         return dp[amount] == amount + 1 ? -1 : dp[amount];
     }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        int[] coins = {186,419,83,408};
-
-        int amount = 6249;
-
-        int o = tt.coinChange(coins, amount);
-
-        System.out.println(o);
-     }
 }
