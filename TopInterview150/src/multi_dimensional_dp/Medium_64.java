@@ -1,6 +1,8 @@
-import java.util.*;
+package multi_dimensional_dp;
 
-public class Test {
+import java.util.Arrays;
+
+public class Medium_64 {
 
     public int minPathSum(int[][] grid) {
 
@@ -36,15 +38,4 @@ public class Test {
 
         return curr;
     }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        int[][] grid = {{1,2,3},{4,5,6}};
-
-        int o = tt.minPathSum(grid);
-
-        System.out.println(o);
-     }
 }

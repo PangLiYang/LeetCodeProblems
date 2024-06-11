@@ -1,4 +1,4 @@
-package one_d_dp;
+package one_dimensional_dp;
 
 public class Medium_198 {
 
