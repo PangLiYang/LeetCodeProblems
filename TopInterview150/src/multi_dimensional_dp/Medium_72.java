@@ -1,6 +1,6 @@
-import java.util.*;
+package multi_dimensional_dp;
 
-public class Test {
+public class Medium_72 {
 
     public int minDistance(String word1, String word2) {
 
@@ -31,16 +31,4 @@ public class Test {
 
         return dp[n1][n2];
     }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        String s1 = "sea";
-        String s2 = "ate";
-
-        int o = tt.minDistance(s1, s2);
-
-        System.out.println(o);
-     }
 }
