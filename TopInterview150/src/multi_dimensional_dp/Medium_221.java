@@ -1,6 +1,6 @@
-import java.util.*;
+package multi_dimensional_dp;
 
-public class Test {
+public class Medium_221 {
 
     public int maximalSquare(char[][] matrix) {
 
@@ -49,21 +49,4 @@ public class Test {
 
         return max;
     }
-
-    public static void main(String[] args) {
-
-        Test tt = new Test();
-
-        char[][] mat = {
-                {'1', '1', '1', '1', '0'},
-                {'1', '1', '1', '1', '0'},
-                {'1', '1', '1', '1', '1'},
-                {'1', '1', '1', '1', '1'},
-                {'0', '0', '1', '1', '1'}
-        };
-
-        int o = tt.maximalSquare(mat);
-
-        System.out.println(o);
-     }
 }
